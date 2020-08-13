@@ -1,0 +1,111 @@
+/* 
+* The card flipping functionality was borrowed from W3Schools
+* https://www.w3schools.com/howto/howto_css_flip_card.asp
+*/
+
+.deck {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.deck.unclickable{
+  pointer-events: none;
+}
+
+.card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 178px;
+  height: 250px;
+  margin: 5px;
+
+  background-color: transparent;
+  font-family: 'BioRhyme', serif;
+  font-size: 2.8rem;
+  line-height: 2.2rem;
+}
+
+.card__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card.flipped .card__inner {
+  transform: rotateY(180deg);
+}
+
+.card__front,
+.card__back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+
+
+}
+
+.card__front {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 10px;
+
+  background-color: #f7f7f7;
+}
+
+.card__back {
+  box-sizing: border-box;
+  background-color: #f00;
+  background-image: url('images/white-thread.png');
+  transform: rotateY(180deg);
+
+  border: 10px solid #fff;
+  box-shadow: 0 0 0 1px #ccc;
+}
+
+.suit {
+  align-self: center;
+}
+
+.number:first-child {
+  text-align: left;
+}
+
+.number:last-child {
+  text-align: right;
+}
+
+.diamonds,
+.hearts {
+  color: #DF001E;
+}
+
+.clubs,
+.spades {
+  color: #24202D;
+}
+
+.level{
+  height:730px;
+  width:100%;
+  background-color:#003366;
+  display:table;
+  text-align: center;
+}
+
+.vertical 
+{
+    color:white;
+    display:table-cell;
+    vertical-align:middle;
+}
